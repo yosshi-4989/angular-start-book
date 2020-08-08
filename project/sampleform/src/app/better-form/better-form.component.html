@@ -1,3 +1,25 @@
-<p>
-  better-form works!
-</p>
+<!-- リアクティブフォームの場合のコード -->
+<!--
+  なんとなく感じた利点は入力フォームの情報をJSファイルに落とし込めること。
+  代わりにコードとしてはちょっと複雑になっている印象を受ける。
+  バリデーション結果の表示方法に関してはIonic等のWebComponentに任せればよい領域だと思うので割愛。
+-->
+
+<!-- FormGroupオブジェクトに対応するFormに設定する -->
+<form [formGroup]="calcForm">
+  <!-- アクセサを通してFormControllオブジェクトへアクセス -->
+  <!-- 独自classのcssを適用させるためにclassを条件によって付与する -->
+  <input formControlName="fieldOne" (keyup)="clearResult()"
+    [class.input-invalid]="fieldOne.invalid"
+    [class.input-valid]="fieldOne.valid">
+  +
+  <input formControlName="fieldTwo" (keyup)="clearResult()"
+    [class.input-invalid]="fieldTwo.invalid"
+    [class.input-valid]="fieldTwo.valid">
+  <!-- FormGroupのFormControllオブジェクトで指定したバリデーションを一括管理できる -->
+  <button (click)="addAnyWay()" [disabled]="calcForm.invalid">CALC</button>
+</form>
+<div>{{result}}</div>
+<div *ngIf="fieldOne.invalid && fieldOne.errors.required">左側のフィールドが空白です</div>
+<div *ngIf="fieldTwo.invalid && fieldTwo.errors.required">右側のフィールドが空白です</div>
+<div *ngIf="fieldTwo.invalid && fieldTwo.errors.maxlength">右側のフィールドの最大は5文字</div>
