@@ -5,6 +5,7 @@ import { FormsModule, FormGroup, FormControl, ReactiveFormsModule } from '@angul
 import { AppComponent } from './app.component';
 import { SimpleFprmComponent } from './simple-fprm/simple-fprm.component';
 import { BetterFormComponent } from './better-form/better-form.component';
+import { ControlsComponent } from './controls/controls.component';
 
 
 @NgModule({
@@ -12,6 +13,7 @@ import { BetterFormComponent } from './better-form/better-form.component';
     AppComponent,
     SimpleFprmComponent,
     BetterFormComponent,
+    ControlsComponent,
   ],
   imports: [
     BrowserModule,

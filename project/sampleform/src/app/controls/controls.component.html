@@ -1,0 +1,28 @@
+<form [formGroup] = "coffeeForm" novalidate>
+  <div>
+    <label>品名：<input formControlName="name"></label>
+  </div>
+  <div>
+    <label>テイスト：<input formControlName="taste"></label>
+  </div>
+  <div>
+    <span *ngFor="let state of hotcoldsel">
+      <input type="radio" formControlName="hotcold" [value]="state">{{state}}
+    </span>
+  </div>
+  <div>
+    <span *ngFor="let item of addssel">
+      <input type="checkbox" (change)="onCheckChanged(item, $event.target.checked)" [value]="item">{{item}}
+    </span>
+  </div>
+  <div>
+    <label>
+      おつまみ：
+      <select formControlName="nut">
+        <option *ngFor="let nut of nutsel" [value]="nut">{{nut}}</option>>
+      </select>
+    </label>
+  </div>
+</form>
+<!-- `|`はフィルタと呼ばれてその後に指定するものをする。以下の例だとJSON形式に変換している。 -->
+<p>フォーム入力値：{{coffeeForm.value | json}}</p>
