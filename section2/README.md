@@ -6,8 +6,12 @@
 書籍とバージョンをそろえるためにバージョンを指定する。
 
 ```bash
-npm install -g typescript@2.6.2
-npm install -g @angular/cli@1.6.0
+sudo npm install -g typescript@2.6.2
+sudo npm install -g @angular/cli@1.6.0
 ```
 
-ちなみに、AngularCLIのライブラリは2020/08/08時点で17の脆弱性が見つかっている模様。
+また、必要なライブラリが不足していたようなので、以下の処理を追加で実行している。
+
+```bash
+sudo npm install -g @angular-devkit/core@10.0.5
+```
