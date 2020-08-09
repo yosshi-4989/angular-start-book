@@ -3,4 +3,10 @@ export class Recipe {
   name: string;
   minute: number;
   feature: string;
+  manner: string;
+  serve: number;
+  ingre: {
+    name: string,
+    amount: string
+  }[]
 }
