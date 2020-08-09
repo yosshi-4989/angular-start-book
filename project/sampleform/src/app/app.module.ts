@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { SimpleFprmComponent } from './simple-fprm/simple-fprm.component';
 import { BetterFormComponent } from './better-form/better-form.component';
 import { ControlsComponent } from './controls/controls.component';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { ControlsComponent } from './controls/controls.component';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
