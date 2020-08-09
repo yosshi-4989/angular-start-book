@@ -1,3 +1,15 @@
-<p>
-  recipe-data works!
-</p>
+<div *ngIf="recipe">
+  <h2>{{recipe.name}}</h2>
+</div>
+<p>{{recipe.feature}}</p>
+<table>
+  <tr>
+    <td>
+      <img width="200" src="/assets/img/pict{{recipe.id}}.png">
+    </td>
+    <td>
+      <b>調理時間：</b>{{recipe.minute}}分<br><br>
+    </td>
+  </tr>
+</table>
+<button (click)="backToList()">戻る</button>
